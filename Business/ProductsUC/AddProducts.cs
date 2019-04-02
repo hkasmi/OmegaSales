@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace Business.ProductsUC
 {
-    public class Class1
+    public partial class ProductsUC
     {
     }
 }
