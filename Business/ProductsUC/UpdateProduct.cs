@@ -10,11 +10,13 @@ namespace Business.ProductsUC
 {
     public partial class ProductsUC
     {
-        public void Create(ProductDTO proDTO)
+        public void Update(ProductDTO dto)
         {
+
             UnitOfWork uow = new UnitOfWork(db);
-            uow.productRepository.Create(proDTO);
+            uow.productRepository.Update(dto);
             uow.save();
         }
+        
     }
 }

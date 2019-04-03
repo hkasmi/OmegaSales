@@ -17,7 +17,9 @@ namespace DAL.ExtensionsMethods
             {
                 Id = dto.id,
                 Name = dto.Name,
-                Price = dto.Price
+                Price = dto.Price,
+                Category = dto.category.ProductCategoryDTOToProductCategory()
+                
 
             };
         }
@@ -28,10 +30,29 @@ namespace DAL.ExtensionsMethods
             {
                 id = product.Id,
                 Name = product.Name,
-                Price = product.Price
+                Price = product.Price,
+                category = product.Category.ProductCategoryToProductCategoryDTO()
+            };
 
+        }
+
+        public static ProductCategory ProductCategoryDTOToProductCategory(this CategoryDTO dto)
+        {
+            return new ProductCategory
+            {
+                Id = dto.id,
+                Name = dto.Name
+            };
+        }
+        public static CategoryDTO ProductCategoryToProductCategoryDTO(this ProductCategory category)
+        {
+            return new CategoryDTO
+            {
+                id = category.Id,
+                Name = category.Name
             };
 
         }
     }
+
 }

@@ -1,5 +1,4 @@
-﻿using Common.DTO;
-using DAL.UnitOfWork;
+﻿using DAL.UnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +9,13 @@ namespace Business.ProductsUC
 {
     public partial class ProductsUC
     {
-        public void Create(ProductDTO proDTO)
+        
+        public void delete(int id)
         {
             UnitOfWork uow = new UnitOfWork(db);
-            uow.productRepository.Create(proDTO);
+            uow.productRepository.Delete(id);
             uow.save();
+
         }
     }
 }

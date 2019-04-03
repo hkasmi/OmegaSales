@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ProductsUC\AddProducts.cs" />
+    <Compile Include="ProductsUC\DeleteProduct.cs" />
     <Compile Include="ProductsUC\GetProducts.cs" />
+    <Compile Include="ProductsUC\UpdateProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

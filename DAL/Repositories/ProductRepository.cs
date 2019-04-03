@@ -29,12 +29,16 @@ namespace DAL.Repositories
         public void Delete(int id)
         {
             //ProductDTO ProductDto = Retrieve(id).ProductDTOToProducts();
-            DbProduct.product.Remove(Pro);
+            //DbProduct.product.Remove(Pro);
+            //Product product = Retrieve(id).ProductDTOToProducts();
+            //DbProduct.product.Remove(product);
+          var product =  DbProduct.product.Where(d => d.Id == id).FirstOrDefault();
+            DbProduct.product.Remove(product);
         }
 
         public void Delete(string id)
         {
-            Product product = Retrieve(id);
+            Product product = Retrieve(id).ProductDTOToProducts();
             DbProduct.product.Remove(product);
         }
 
@@ -46,24 +50,40 @@ namespace DAL.Repositories
         public ProductDTO Retrieve(int id)
         {
 
-            return DbProduct.product.FirstOrDefault(u => u.Id == id);
+            return DbProduct.product.FirstOrDefault(u => u.Id == id).ProductToProductDTO();
         }
 
-        public Product Retrieve(string id)
+        //public List<Product> RetrieveAll()
+        //{
+        //    return DbProduct.product.ToList();
+        //}
+
+        public void Update(ProductDTO obj)
+        {
+
+            //Product product = Retrieve(obj.id).ProductDTOToProducts();
+            Product product = DbProduct.product.FirstOrDefault(u => u.Id == obj.id);
+            product.Name = obj.Name;
+            product.Price = obj.Price;
+            //DbProduct.SaveChanges();
+            //return product.ProductToProductDTO();
+        }
+
+        public ProductDTO Retrieve(string id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Product> RetrieveAll()
+        public List<ProductDTO> RetrieveAll()
         {
-            return DbProduct.product.ToList();
-        }
+            List<ProductDTO> lisdto = new List<ProductDTO>();
 
-        public void Update(Product obj)
-        {
-            Product product = Retrieve(obj.Id);
-            product.Name = obj.Name;
-            product.Price = obj.Price;
+            foreach (var item in DbProduct.product.ToList())
+            {
+                lisdto.Add(item.ProductToProductDTO());
+            }
+
+            return lisdto;
         }
     }
 }
