@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace Common.DTO
 {
-    public class Class1
+    public class CategoryDTO
     {
+        public int id { get; set; }
+        public string Name { get; set; }
     }
 }
