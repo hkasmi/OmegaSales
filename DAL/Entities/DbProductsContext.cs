@@ -10,10 +10,11 @@ namespace DAL.Entities
 {
     public class DbProductsContext : DbContext
     {
-        public DbProductsContext():base("name=DbProductsContext")
+        public DbProductsContext() : base("name=DbProductsContext")
         {
-            
-        } public DbSet<Product> product { get; set; }
-        public DbSet<ProductCategory> category { get; set; }
+
+        }
+        public DbSet<Product> product { get; set; }
+        public DbSet<Category> category { get; set; }
     }
 }

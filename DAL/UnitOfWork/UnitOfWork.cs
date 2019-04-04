@@ -12,6 +12,7 @@ namespace DAL.UnitOfWork
     {
         private DbProductsContext _dbContext;
         private ProductRepository _produts;
+        private CategoryRepository _categories;
 
         public UnitOfWork(DbProductsContext db)
         {
@@ -27,6 +28,18 @@ namespace DAL.UnitOfWork
                     _produts = new ProductRepository(_dbContext);
                 }
                 return _produts;
+            }
+        }
+
+        public CategoryRepository categoryRepository
+        {
+            get
+            {
+                if (_categories == null)
+                {
+                    _categories = new CategoryRepository(_dbContext);
+                }
+                return _categories;
             }
         }
 

@@ -10,7 +10,7 @@ namespace DAL.ExtensionsMethods
 {
     public static class Converters
     {
-        
+
         public static Product ProductDTOToProducts(this ProductDTO dto)
         {
             return new Product
@@ -18,7 +18,7 @@ namespace DAL.ExtensionsMethods
                 Id = dto.id,
                 Name = dto.Name,
                 Price = dto.Price,
-                Category = dto.category.ProductCategoryDTOToProductCategory()
+                //Category = dto.category.ProductCategoryDTOToProductCategory()
                 
 
             };
@@ -31,20 +31,20 @@ namespace DAL.ExtensionsMethods
                 id = product.Id,
                 Name = product.Name,
                 Price = product.Price,
-                category = product.Category.ProductCategoryToProductCategoryDTO()
+                //category = product.Category.ProductCategoryToProductCategoryDTO()
             };
 
         }
 
-        public static ProductCategory ProductCategoryDTOToProductCategory(this CategoryDTO dto)
+        public static Category CategoryDTOToCategory(this CategoryDTO dto)
         {
-            return new ProductCategory
+            return new Category
             {
                 Id = dto.id,
                 Name = dto.Name
             };
         }
-        public static CategoryDTO ProductCategoryToProductCategoryDTO(this ProductCategory category)
+        public static CategoryDTO CategoryToCategoryDTO(this Category category)
         {
             return new CategoryDTO
             {

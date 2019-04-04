@@ -10,7 +10,7 @@ namespace OmegaSales.Controllers
 {
     public class ProductsController : Controller
     {
-        ProductsUC products = new ProductsUC();
+        Products products = new Products();
         // GET: Products
         public ActionResult Index()
         {
@@ -50,6 +50,7 @@ namespace OmegaSales.Controllers
         public ActionResult Edit(int id)
         {
             var pro=products.GetProductById(id);
+            //ViewBag.Categories = get
             return View("Edit",pro);
         }
         [HttpPost]

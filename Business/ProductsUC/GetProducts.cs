@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Business.ProductsUC
 {
-    public partial class ProductsUC
+    public partial class Products
     {
         DbProductsContext db = new DbProductsContext();
         public List<ProductDTO> GetProducts()

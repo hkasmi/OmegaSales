@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Business.ProductsUC
 {
-    public partial class ProductsUC
+    public partial class Products
     {
         
         public void delete(int id)

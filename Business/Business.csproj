@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaegoriesUC\AddCategory.cs" />
+    <Compile Include="CaegoriesUC\GetCategories.cs" />
     <Compile Include="ProductsUC\AddProducts.cs" />
     <Compile Include="ProductsUC\DeleteProduct.cs" />
     <Compile Include="ProductsUC\GetProducts.cs" />
